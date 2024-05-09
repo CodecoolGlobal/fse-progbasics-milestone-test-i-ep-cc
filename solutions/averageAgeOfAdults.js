@@ -16,7 +16,10 @@ You do not have to deal with the case, when there are only underage users in the
 */
 
 function averageAgeOfAdults(users) {
-  // commit without any solutions
+  const adults = users.filter((u) => u.age >= 18);
+  const totalAge = adults.reduce((sum, curr) => sum + curr.age, 0);
+  const avg = totalAge / adults.length;
+  return avg;
 }
 
 module.exports = averageAgeOfAdults;
